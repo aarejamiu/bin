@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "635952722132",
+    "project_id": "bincom-9340a",
+    "storage_bucket": "bincom-9340a.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:635952722132:android:a776f0f6e5035972cd8b41",
+        "android_client_info": {
+          "package_name": "com.example.ass3"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDJ4euyscTGGxPAA-A9XgQB9eqP_OFyz28"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

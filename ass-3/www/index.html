@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Security-Policy"
+        content="default-src * 'unsafe-inline' data: gap: content:">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nudge</title>
+  <style>
+    body { font-family: sans-serif; margin: 0; padding: 16px; }
+    input, button { width: 100%; padding: 12px; margin: 6px 0; font-size: 16px; box-sizing: border-box; }
+    button { background: #2e7d32; color: #fff; border: 0; border-radius: 6px; }
+    .card { border: 1px solid #ddd; border-radius: 8px; padding: 10px; margin: 8px 0; }
+    .hidden { display: none; }
+    .done { text-decoration: line-through; color: #888; }
+  </style>
+</head>
+<body>
+  <div id="login">
+    <h2>Nudge</h2>
+    <input id="email" type="email" placeholder="Email">
+    <input id="password" type="password" placeholder="Password">
+    <button id="btnLogin">Login</button>
+    <button id="btnRegister">Register</button>
+  </div>
+
+  <div id="home" class="hidden">
+    <p id="whoami"></p>
+    <button id="btnUsers">Assign a task</button>
+    <button id="btnTasks">My tasks</button>
+  </div>
+
+  <div id="users" class="hidden">
+    <h3>Pick a user</h3>
+    <div id="userList"></div>
+    <button class="back">Back</button>
+  </div>
+
+  <div id="assign" class="hidden">
+    <h3 id="assignTo"></h3>
+    <input id="taskText" maxlength="1000" placeholder="Task description">
+    <button id="btnSend">Send</button>
+    <button class="back">Back</button>
+  </div>
+
+  <div id="tasks" class="hidden">
+    <h3>My tasks</h3>
+    <div id="taskList"></div>
+    <button class="back">Back</button>
+  </div>
+
+  <script src="cordova.js"></script>
+  <script src="js/index.js"></script>
+</body>
+</html>
