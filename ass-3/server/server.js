@@ -1,22 +1,15 @@
 const express = require('express');
+const cors = require('cors');
 const admin = require('firebase-admin');
 
-if (!process.env.SERVICE_ACCOUNT) {
-  throw new Error('Set SERVICE_ACCOUNT to the Firebase service-account JSON before starting the server.');
-}
-
-let serviceAccount;
-try {
-  serviceAccount = JSON.parse(process.env.SERVICE_ACCOUNT);
-} catch (error) {
-  throw new Error('SERVICE_ACCOUNT must contain valid JSON.', { cause: error });
-}
+const serviceAccount = require('/etc/secrets/serviceAccount.json');
 
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount)
 });
 
 const app = express();
+app.use(cors());
 app.use(express.json({ limit: '16kb' }));
 
 app.post('/send', async (req, res) => {
