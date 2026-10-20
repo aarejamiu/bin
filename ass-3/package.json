@@ -58,5 +58,8 @@
         "ANDROID_GOOGLEID_VERSION": "1.2.0"
       }
     }
+  },
+  "dependencies": {
+    "cors": "^2.8.6"
   }
 }
