@@ -1,4 +1,4 @@
-const SERVER = 'https://YOUR-APP.onrender.com';
+const SERVER = 'https://bin-hr2h.onrender.com';
 let me = null, target = null;
 
 const fb = () => FirebasePlugin;
