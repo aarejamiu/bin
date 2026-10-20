@@ -2,25 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const admin = require('firebase-admin');
 
-const fs = require('fs');
-
-const secretsDir = '/etc/secrets';
-console.log(
-  'Files in /etc/secrets:',
-  fs.existsSync(secretsDir) ? fs.readdirSync(secretsDir) : 'folder does not exist'
-);
-
-// Use whichever .json file is there, so the exact name doesn't matter
-const secretFile = fs.existsSync(secretsDir)
-  ? fs.readdirSync(secretsDir).find(f => f.toLowerCase().endsWith('.json'))
-  : null;
-
-if (!secretFile) {
-  throw new Error('No .json file found in /etc/secrets. Add the Secret File in Render.');
-}
-
-const serviceAccount = JSON.parse(fs.readFileSync(secretsDir + '/' + secretFile, 'utf8'));
-// const serviceAccount = require('/etc/secrets/serviceAccount.json');
+const serviceAccount = require('/etc/secrets/serviceAccount.json');
 
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount)
